@@ -34,11 +34,9 @@
             "import": "./dist/jotaish.es.js"
         }
     },
-    "dependencies": {
-        "jotai": "^1.7.8",
-        "react": "^18.2.0"
-    },
     "devDependencies": {
+        "jotai": "^1.7.8",
+        "react": "^18.2.0",
         "@types/react": "^18.0.15",
         "typescript": "^4.6.4",
         "vite": "^3.0.0",
