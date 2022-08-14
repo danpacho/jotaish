@@ -3,6 +3,8 @@ import { useAtom } from "jotai";
 import type { Atom, WritableAtom } from "jotai";
 import type { SetAtom } from "jotai/core/atom";
 
+import { getStore } from "./getStore";
+
 type StringLiteral<Literal> = Literal extends string
     ? string extends Literal
         ? never
@@ -68,5 +70,4 @@ function useStore<
 
     return manager;
 }
-export { useStore };
-export * from "./getStore";
+export { useStore, getStore };
