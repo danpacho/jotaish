@@ -14,6 +14,9 @@
   - [Without Jotaish🃏](#without-jotaish)
   - [With Jotaish🃏](#with-jotaish)
 - [How to use](#how-to-use)
+  - [STEP1: Make Atom `Store`](#step1-make-atom-store)
+  - [STEP2: Make `$` function and export `$`, `useStore` function in one file](#step2-make--function-and-export--usestore-function-in-one-file)
+  - [STEP3: Use atoms in the component](#step3-use-atoms-in-the-component)
 - [Return value according to Atom type](#return-value-according-to-atom-type)
   - [CASE1. Primitive, Read-Write Atom](#case1-primitive-read-write-atom)
   - [CASE2. Read Only Atom](#case2-read-only-atom)
@@ -39,7 +42,7 @@ pnpm i jotaish
 
 # The Solution
 
-> Consistent `name` and `import` with magical ✨autocomplete✨
+> Consistent `name` and `import` with magical ✨autocompletion✨
 
 1. Categorize atoms by usage (📢 user requirements)
 2. Autocomplete atom's name
@@ -75,7 +78,7 @@ const { Count, setCount } = useStore($("count"));
 
 # How to use
 
-1. Make Atom `Store`
+## STEP1: Make Atom `Store`
 
 at `*/atom/countAtoms.ts`
 
@@ -97,7 +100,7 @@ const Store = {
 
 [const assertion 🚩](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)
 
-2. Make `$` function and export `$`, `useStore` function in one file
+## STEP2: Make `$` function and export `$`, `useStore` function in one file
 
 at `*/atom/index.ts`
 
@@ -114,7 +117,7 @@ const $ = getStore(Store); // ✅ You can choose diffrent name like _, _s!
 export { $, useStore };
 ```
 
-3. Use atoms in the component
+## STEP3: Use atoms in the component
 
 ```tsx
 import { useStore, $ } from "@atoms/index";
@@ -192,10 +195,13 @@ const { setUpdateCount, atomOfUpdateCount } = useStore($("updateCount"));
 # Size
 
 ```bash
+
 # ✅ ESM ======================================
 dist/jotaish.es.js   0.31 KiB / gzip: 0.22 KiB
+
 # ✅ UMD ======================================
 dist/jotaish.umd.js   0.54 KiB / gzip: 0.35 KiB
+
 ```
 
 # LICENSE
