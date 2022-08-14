@@ -16,10 +16,9 @@ export default defineConfig({
             fileName: (format: string) => `jotaish.${format}.js`,
         },
         rollupOptions: {
-            external: ["react", "jotai"],
+            external: ["jotai"],
             output: {
                 globals: {
-                    react: "React",
                     jotai: "jotai",
                 },
             },
