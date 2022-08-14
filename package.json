@@ -25,7 +25,7 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/jotaish.umd.js",
+    "main": "./dist/jotaish.es.js",
     "module": "./dist/jotaish.es.js",
     "exports": {
         ".": {
