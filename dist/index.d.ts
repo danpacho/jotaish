@@ -1,5 +1,6 @@
 import type { Atom, WritableAtom } from "jotai";
 import type { SetAtom } from "jotai/core/atom";
+import { getStore } from "./getStore";
 declare type StringLiteral<Literal> = Literal extends string ? string extends Literal ? never : Literal : never;
 declare type Awaited<T> = T extends Promise<infer V> ? Awaited<V> : T;
 declare type ActionName<ActionObject, AtomName> = {
@@ -24,5 +25,4 @@ declare function useStore<Value, AtomName extends string>(Store: {
     atom: Atom<Value>;
     key: AtomName;
 }): ReadOnly<Value, AtomName>;
-export { useStore };
-export * from "./getStore";
+export { useStore, getStore };
