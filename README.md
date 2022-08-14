@@ -6,6 +6,27 @@
 
 </div>
 
+- [Get started](#get-started)
+- [The Problem](#the-problem)
+  - [Large scale problem list](#large-scale-problem-list)
+- [The Solution](#the-solution)
+- [Adoptation](#adoptation)
+  - [Without Jotaish🃏](#without-jotaish)
+  - [With Jotaish🃏](#with-jotaish)
+- [How to use](#how-to-use)
+- [Return value according to Atom type](#return-value-according-to-atom-type)
+  - [CASE1. Primitive, Read-Write Atom](#case1-primitive-read-write-atom)
+  - [CASE2. Read Only Atom](#case2-read-only-atom)
+  - [CASE3. Write Only Atom](#case3-write-only-atom)
+- [Size](#size)
+- [LICENSE](#license)
+
+# Get started
+
+```bash
+pnpm i jotaish
+```
+
 # The Problem
 
 > In Short, as scale of number of atoms becomes larger, managing them becomes more harder.
@@ -44,7 +65,7 @@ const { count, setCount } = useCountHook();
 ## With Jotaish🃏
 
 ```ts
-// ✅  use magic ✨autocompletion✨.
+// ✅  use magical ✨autocompletion✨.
 import { $, useStore } from "@atoms/index";
 
 const { Count, setCount } = useStore($("count"));
@@ -166,6 +187,15 @@ But **`state` = `null`**, Just ignore it and don't destruct.
 
 ```ts
 const { setUpdateCount, atomOfUpdateCount } = useStore($("updateCount"));
+```
+
+# Size
+
+```bash
+# ✅ ESM ======================================
+dist/jotaish.es.js   0.31 KiB / gzip: 0.22 KiB
+# ✅ UMD ======================================
+dist/jotaish.umd.js   0.54 KiB / gzip: 0.35 KiB
 ```
 
 # LICENSE
